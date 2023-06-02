@@ -3,22 +3,15 @@ import React, { useRef } from "react";
 function NewTodo({
   setTodos,
 }: {
-  setTodos: React.Dispatch<
-    React.SetStateAction<{ id: string; text: string }[]>
-  >;
-}) {
+  setTodos: (text: string) => void;
+}): JSX.Element {
   const textInputRef = useRef<HTMLInputElement>(null);
 
   const todoSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
-
     const enteredText = textInputRef.current!.value;
-    setTodos((prev) => [
-      ...prev,
-      { id: Math.random().toString(), text: enteredText },
-    ]);
+    setTodos(enteredText);
   };
-
   return (
     <form onSubmit={todoSubmitHandler}>
       <div>
