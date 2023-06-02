@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 
-function NewTodo({
-  setTodos,
-}: {
+type NewTodoProps = {
   setTodos: (text: string) => void;
-}): JSX.Element {
+};
+
+function NewTodo({ setTodos }: NewTodoProps): JSX.Element {
   const textInputRef = useRef<HTMLInputElement>(null);
 
   const todoSubmitHandler = (event: React.FormEvent) => {
