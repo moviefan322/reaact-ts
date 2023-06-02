@@ -2,7 +2,7 @@ import React from "react";
 
 interface Todo {
   id: string;
-  text: string[];
+  text: string;
 }
 
 interface TodoListProps {
